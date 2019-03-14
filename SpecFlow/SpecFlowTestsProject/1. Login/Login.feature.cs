@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SpecFlowTestsProject.Tests._1_Login
+namespace SpecFlowTestsProject._1_Login
 {
     using TechTalk.SpecFlow;
     
@@ -19,7 +19,7 @@ namespace SpecFlowTestsProject.Tests._1_Login
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [TechTalk.SpecRun.FeatureAttribute("Login Form", Description="\tIn order to login to the application\r\n\tAs a user\r\n\tI want to be able to login us" +
         "ing assigned credentials\r\n\tAnd must not be able to login with invalid credential" +
-        "s", SourceFile="Tests\\1. Login\\Login.feature", SourceLine=0)]
+        "s", SourceFile="1. Login\\Login.feature", SourceLine=0)]
     public partial class LoginFormFeature
     {
         

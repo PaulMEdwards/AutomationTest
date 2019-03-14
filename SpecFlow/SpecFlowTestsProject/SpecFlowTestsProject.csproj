@@ -70,25 +70,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Tests\1. Login\LoginFormSteps.cs" />
+    <Compile Include="1. Login\LoginFormSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests\1. Login\Login.feature.cs">
+    <Compile Include="1. Login\Login.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Login.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\2. Alerts\Alerts.feature.cs">
+    <Compile Include="2. Alerts\Alerts.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Alerts.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\2. Alerts\AlertsSteps.cs" />
-    <Compile Include="Tests\3. Controls\Dynamic.feature.cs">
+    <Compile Include="2. Alerts\AlertsSteps.cs" />
+    <Compile Include="3. Controls\Dynamic.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Dynamic.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\4. Geolocation\Geocoordinates.feature.cs">
+    <Compile Include="4. Geolocation\Geocoordinates.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Geocoordinates.feature</DependentUpon>
@@ -105,25 +105,25 @@
     <None Include="SpecRunTestProfile_2011_09.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Tests\1. Login\Login.feature">
+    <None Include="1. Login\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\2. Alerts\Alerts.feature">
+    <None Include="2. Alerts\Alerts.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Alerts.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\3. Controls\Dynamic.feature">
+    <None Include="3. Controls\Dynamic.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Dynamic.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\4. Geolocation\Geocoordinates.feature">
+    <None Include="4. Geolocation\Geocoordinates.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Geocoordinates.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AUT\" />
+    <Folder Include="0. Common\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

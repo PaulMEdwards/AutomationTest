@@ -13,7 +13,7 @@ Scenario: Alert
 
 
 @Alert @Confirm @OK
-Scenario: Confirm
+Scenario: Confirm_OK
 	Given I visit the JavaScript example alerts page
 	When I click the Confirm example button
 	Then I confirm Alert appears with "I am a JS Confirm" text and "OK,Cancel" input
@@ -21,7 +21,7 @@ Scenario: Confirm
 	And I confirm Result message "You clicked: Ok"
 
 @Alert @Confirm @Cancel
-Scenario: Confirm
+Scenario: Confirm_Cancel
 	Given I visit the JavaScript example alerts page
 	When I click the Confirm example button
 	Then I confirm Alert appears with "I am a JS Confirm" text and "OK,Cancel" input
@@ -39,7 +39,7 @@ Scenario Outline: Prompt
 	And I confirm Result message "<Message>"
 Scenarios:
 	| Text                                   | Button | Message                                             |
-	| TestMonkey                             | Cancel | You entered: null                                   |
 	| ""                                     | OK     | You entered:                                        |
+	| TestMonkey                             | Cancel | You entered: null                                   |
 	| Infinite Monkeys on Infinite Keyboards | OK     | You entered: Infinite Monkeys on Infinite Keyboards |
 	

@@ -10,28 +10,28 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SpecFlowTestsProject.Tests._3_Controls
+namespace SpecFlowTestsProject._4_Geolocation
 {
     using TechTalk.SpecFlow;
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("Dynamic", Description="\tIn order to avoid silly mistakes\r\n\tAs a math idiot\r\n\tI want to be told the sum o" +
-        "f two numbers", SourceFile="Tests\\3. Controls\\Dynamic.feature", SourceLine=0)]
-    public partial class DynamicFeature
+    [TechTalk.SpecRun.FeatureAttribute("Geolocation", Description="\tIn order to avoid silly mistakes\r\n\tAs a math idiot\r\n\tI want to be told the sum o" +
+        "f two numbers", SourceFile="4. Geolocation\\Geocoordinates.feature", SourceLine=0)]
+    public partial class GeolocationFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "Dynamic.feature"
+#line 1 "Geocoordinates.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Dynamic", "\tIn order to avoid silly mistakes\r\n\tAs a math idiot\r\n\tI want to be told the sum o" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Geolocation", "\tIn order to avoid silly mistakes\r\n\tAs a math idiot\r\n\tI want to be told the sum o" +
                     "f two numbers", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
