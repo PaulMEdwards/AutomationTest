@@ -17,8 +17,8 @@ namespace SpecFlowTestsProject._2_Alerts
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("Alerts", Description="\tIn order to test JavaScript alerts\r\n\tAs an Automated Test\r\n\tI will exercise the " +
-        "following examples", SourceFile="2. Alerts\\Alerts.feature", SourceLine=0)]
+    [TechTalk.SpecRun.FeatureAttribute("Alerts", Description="\tIn order to test JavaScript alerts\r\n\tAs an Automated Test\r\n\tI will exercise seve" +
+        "ral examples", SourceFile="2. Alerts\\Alerts.feature", SourceLine=0)]
     public partial class AlertsFeature
     {
         
@@ -31,8 +31,8 @@ namespace SpecFlowTestsProject._2_Alerts
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Alerts", "\tIn order to test JavaScript alerts\r\n\tAs an Automated Test\r\n\tI will exercise the " +
-                    "following examples", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Alerts", "\tIn order to test JavaScript alerts\r\n\tAs an Automated Test\r\n\tI will exercise seve" +
+                    "ral examples", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         

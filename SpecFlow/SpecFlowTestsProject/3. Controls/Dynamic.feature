@@ -1,11 +1,25 @@
 ﻿Feature: Dynamic
-	In order to avoid silly mistakes
-	As a math idiot
-	I want to be told the sum of two numbers
+	In order to test Dynamic Controls changed asynchronously
+	As an Automated Test
+	I will exercise two examples
 
-@mytag
-Scenario: Add two numbers
-	Given I have entered 50 into the calculator
-	And I have entered 70 into the calculator
-	When I press add
-	Then the result should be 120 on the screen
+@DynamicControls
+Scenario: Remove and Add checkbox control
+	Given I visit the Dynamic Controls example page
+	When I click the checkbox Remove button
+	Then Observe loading animation shown then hidden
+	And Confirm checkbox removal
+	When I click the checkbox Add button
+	Then Observe loading animation shown then hidden
+	And Confirm checkbox added
+
+
+@DynamicControls
+Scenario: Disable and Enable text input control
+	Given I visit the Dynamic Controls example page
+	When I click the text input Enable button
+	Then Observe loading animation shown then hidden
+	And Confirm text input enabled
+	When I click the text input Disable button
+	Then Observe loading animation shown then hidden
+	And Confirm text input disabled

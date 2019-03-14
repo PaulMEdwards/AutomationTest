@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="1. Login\LoginFormSteps.cs" />
+    <Compile Include="3. Controls\DynamicControlsSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="1. Login\Login.feature.cs">
       <AutoGen>True</AutoGen>

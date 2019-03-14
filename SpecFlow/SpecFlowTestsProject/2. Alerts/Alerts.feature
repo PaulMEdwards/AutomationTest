@@ -1,7 +1,7 @@
 ﻿Feature: Alerts
 	In order to test JavaScript alerts
 	As an Automated Test
-	I will exercise the following examples
+	I will exercise several examples
 
 @Alert @Basic
 Scenario: Alert
