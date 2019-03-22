@@ -5,32 +5,34 @@
 
 @Geolocation @Blocked
 Scenario: Geolocate explicitly blocked by user
-	#Click "Where am I?" button.
-	#Explicitly block geolocate request permission.
-	#Geolocate not performed. No change in page.
-	#Confirm subsequent page visits are automatically blocked.
-	Given A
-	And B
-	When C
-	Then D
+	Given I visit the Geolocation page
+	When I click the Where am I? button
+	And "Deny" geolocate request permission dialog
+	Then Geolocate "is not" performed
+	When I click the Where am I? button
+	Then Geolocate permission request is not presented
+	And Geolocate "is not" performed
 	
 @Geolocation @Blocked
 Scenario: Geolocate automatically blocked by browser
-	#Click "Where am I?" button.
-	#Close permission request dialog.
-	#Geolocate not performed. No change in page.
-	#Repeat prior 3 steps at least 3 times.
-	#Confirm geolocate permission no longer requested on 3rd attempt due to browser automatically setting it to blocked based on user action on prior attempts.
-	Given A
-	When C
-	Then D
+	Given I visit the Geolocation page
+	When I click the Where am I? button
+	And "Close" geolocate request permission dialog
+	Then Geolocate "is not" performed
+	When I click the Where am I? button
+	And "Close" geolocate request permission dialog
+	Then Geolocate "is not" performed
+	When I click the Where am I? button
+	And "Close" geolocate request permission dialog
+	Then Geolocate "is not" performed
+	When I click the Where am I? button
+	Then Geolocate permission request is not presented
 	
 @Geolocation @Allowed
 Scenario: Geolocate authorized by user
-	#Click "Where am I?" button.
-	#Grant geolocate permission on request dialog.
-	#Geolocate performed, user's Lat/Long coordinates displayed, Google maps link offered.
-	#Current page replaced with Google Maps page showing user's current location.
-	Given A
-	When C
-	Then E
+	Given I visit the Geolocation page
+	When I click the Where am I? button
+	And "Grant" geolocate request permission dialog
+	Then Geolocate "is" performed
+	And User's Lat/Long coordinates are displayed
+	And Google Maps link shows location by returned coordinates

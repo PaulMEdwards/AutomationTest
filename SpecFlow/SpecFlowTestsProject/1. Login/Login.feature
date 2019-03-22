@@ -5,23 +5,20 @@
 	And must not be able to login with invalid credentials
 
 @login @Valid
-Scenario Outline: Login with valid credentials
+Scenario: Login with valid credentials
 	Given I visit the login form
-	And I input "<Username>" as username and "<Password>" as password
+	And I input "tomsmith" as username and "SuperSecretPassword!" as password
 	When I click the Login button
-	Then user should be logged in with "<ResultMessage>" and "<Status>"
-	And the Secure Area page should load without error
+	Then the Secure Area page should load without error
+	And the user should see "You logged into a secure area!" indicating "success"
 	And the user can logout and return to the login form
-Scenarios:
-	| Username | Password             | ResultMessage                  | Status  |
-	| tomsmith | SuperSecretPassword! | You logged into a secure area! | success |
 
 @login @invalid
 Scenario Outline: Attempt login with invalid credentials
 	Given I visit the login form
 	And I input "<Username>" as username and "<Password>" as password
 	When I click the Login button
-	Then the user should see the "<ResultMessage>" and "<Status>"
+	Then the user should see "<ResultMessage>" indicating "<Status>"
 	And the Secure Area page should NOT load
 Scenarios:
 	| Username | Password             | ResultMessage             | Status |

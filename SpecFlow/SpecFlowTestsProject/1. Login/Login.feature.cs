@@ -70,43 +70,31 @@ namespace SpecFlowTestsProject._1_Login
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void LoginWithValidCredentials(string username, string password, string resultMessage, string status, string[] exampleTags)
+        [TechTalk.SpecRun.ScenarioAttribute("Login with valid credentials", new string[] {
+                "login",
+                "Valid"}, SourceLine=7)]
+        public virtual void LoginWithValidCredentials()
         {
-            string[] @__tags = new string[] {
-                    "login",
-                    "Valid"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login with valid credentials", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login with valid credentials", null, new string[] {
+                        "login",
+                        "Valid"});
 #line 8
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
  testRunner.Given("I visit the login form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
- testRunner.And(string.Format("I input \"{0}\" as username and \"{1}\" as password", username, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I input \"tomsmith\" as username and \"SuperSecretPassword!\" as password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
  testRunner.When("I click the Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 12
- testRunner.Then(string.Format("user should be logged in with \"{0}\" and \"{1}\"", resultMessage, status), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the Secure Area page should load without error", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 13
- testRunner.And("the Secure Area page should load without error", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the user should see \"You logged into a secure area!\" indicating \"success\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
  testRunner.And("the user can logout and return to the login form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Login with valid credentials, tomsmith", new string[] {
-                "login",
-                "Valid"}, SourceLine=16)]
-        public virtual void LoginWithValidCredentials_Tomsmith()
-        {
-#line 8
-this.LoginWithValidCredentials("tomsmith", "SuperSecretPassword!", "You logged into a secure area!", "success", ((string[])(null)));
-#line hidden
         }
         
         public virtual void AttemptLoginWithInvalidCredentials(string username, string password, string resultMessage, string status, string[] exampleTags)
@@ -119,18 +107,18 @@ this.LoginWithValidCredentials("tomsmith", "SuperSecretPassword!", "You logged i
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Attempt login with invalid credentials", null, @__tags);
-#line 20
+#line 17
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 21
+#line 18
  testRunner.Given("I visit the login form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 22
+#line 19
  testRunner.And(string.Format("I input \"{0}\" as username and \"{1}\" as password", username, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 23
+#line 20
  testRunner.When("I click the Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 24
- testRunner.Then(string.Format("the user should see the \"{0}\" and \"{1}\"", resultMessage, status), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 25
+#line 21
+ testRunner.Then(string.Format("the user should see \"{0}\" indicating \"{1}\"", resultMessage, status), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 22
  testRunner.And("the Secure Area page should NOT load", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -138,40 +126,40 @@ this.ScenarioInitialize(scenarioInfo);
         
         [TechTalk.SpecRun.ScenarioAttribute("Attempt login with invalid credentials, Variant 0", new string[] {
                 "login",
-                "invalid"}, SourceLine=27)]
+                "invalid"}, SourceLine=24)]
         public virtual void AttemptLoginWithInvalidCredentials_Variant0()
         {
-#line 20
+#line 17
 this.AttemptLoginWithInvalidCredentials("garbage", "SuperSecretPassword!", "Your username is invalid!", "error", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Attempt login with invalid credentials, Variant 1", new string[] {
                 "login",
-                "invalid"}, SourceLine=27)]
+                "invalid"}, SourceLine=24)]
         public virtual void AttemptLoginWithInvalidCredentials_Variant1()
         {
-#line 20
+#line 17
 this.AttemptLoginWithInvalidCredentials("Null", "SuperSecretPassword!", "Your username is invalid!", "error", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Attempt login with invalid credentials, Variant 2", new string[] {
                 "login",
-                "invalid"}, SourceLine=27)]
+                "invalid"}, SourceLine=24)]
         public virtual void AttemptLoginWithInvalidCredentials_Variant2()
         {
-#line 20
+#line 17
 this.AttemptLoginWithInvalidCredentials("tomsmith", "garbage", "Your password is invalid!", "error", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Attempt login with invalid credentials, Variant 3", new string[] {
                 "login",
-                "invalid"}, SourceLine=27)]
+                "invalid"}, SourceLine=24)]
         public virtual void AttemptLoginWithInvalidCredentials_Variant3()
         {
-#line 20
+#line 17
 this.AttemptLoginWithInvalidCredentials("tomsmith", "Null", "Your password is invalid!", "error", ((string[])(null)));
 #line hidden
         }

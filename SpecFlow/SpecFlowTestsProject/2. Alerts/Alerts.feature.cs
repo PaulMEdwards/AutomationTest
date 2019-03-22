@@ -68,12 +68,12 @@ namespace SpecFlowTestsProject._2_Alerts
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Alert", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Basic Alert", new string[] {
                 "Alert",
                 "Basic"}, SourceLine=6)]
-        public virtual void Alert()
+        public virtual void BasicAlert()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Alert", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Basic Alert", null, new string[] {
                         "Alert",
                         "Basic"});
 #line 7
@@ -82,9 +82,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
  testRunner.Given("I visit the JavaScript example alerts page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
- testRunner.When("I click the Alert example button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I click the \"Alert\" example button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
- testRunner.Then("I confirm Alert appears with \"I am a JS Alert\" text and \"OK\" input", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I confirm Alert appears with \"I am a JS Alert\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 11
  testRunner.And("I act upon alert by clicking \"OK\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
@@ -93,13 +93,13 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Confirm_OK", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Confirm OK", new string[] {
                 "Alert",
                 "Confirm",
                 "OK"}, SourceLine=15)]
-        public virtual void Confirm_OK()
+        public virtual void ConfirmOK()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confirm_OK", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confirm OK", null, new string[] {
                         "Alert",
                         "Confirm",
                         "OK"});
@@ -109,9 +109,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 17
  testRunner.Given("I visit the JavaScript example alerts page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 18
- testRunner.When("I click the Confirm example button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I click the \"Confirm\" example button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 19
- testRunner.Then("I confirm Alert appears with \"I am a JS Confirm\" text and \"OK,Cancel\" input", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I confirm Alert appears with \"I am a JS Confirm\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 20
  testRunner.And("I act upon alert by clicking \"OK\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
@@ -120,13 +120,13 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Confirm_Cancel", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Confirm Cancel", new string[] {
                 "Alert",
                 "Confirm",
                 "Cancel"}, SourceLine=23)]
-        public virtual void Confirm_Cancel()
+        public virtual void ConfirmCancel()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confirm_Cancel", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confirm Cancel", null, new string[] {
                         "Alert",
                         "Confirm",
                         "Cancel"});
@@ -136,9 +136,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 25
  testRunner.Given("I visit the JavaScript example alerts page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 26
- testRunner.When("I click the Confirm example button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I click the \"Confirm\" example button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 27
- testRunner.Then("I confirm Alert appears with \"I am a JS Confirm\" text and \"OK,Cancel\" input", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I confirm Alert appears with \"I am a JS Confirm\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 28
  testRunner.And("I act upon alert by clicking \"Cancel\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
@@ -163,10 +163,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 34
  testRunner.Given("I visit the JavaScript example alerts page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 35
- testRunner.When("I click the Prompt example button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I click the \"Prompt\" example button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 36
- testRunner.Then("I confirm Alert appears with \"I am a JS prompt\" text and \"TextBox,OK,Cancel\" inpu" +
-                    "t", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I confirm Alert appears with \"I am a JS prompt\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 37
  testRunner.And(string.Format("I act upon alert by inputting text \"{0}\"", text), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 38
