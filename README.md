@@ -18,3 +18,4 @@ In order for us to better assess your understanding and use of page objects, fra
 8. Optionally, right-click the SpecFlowTestProject parent entry in the Test Explorer tree and select "Expand All".
 8. Click Run All
 9. Optionally, comment out or remove the "@Ignore" tag on the 2 "Bug" tests within the Dynamic section, then save the feature file and run each of those tests manually.
+10. View the Test Run Report file from the Tests Output pane.
