@@ -6,20 +6,49 @@
 @DynamicControls
 Scenario: Remove and Add checkbox control
 	Given I visit the Dynamic Controls example page
-	When I click the checkbox Remove button
+	And I toggle the checkbox
+	When I click the "Remove" button
 	Then Observe loading animation shown then hidden
 	And Confirm checkbox removal
-	When I click the checkbox Add button
+	When I click the "Add" button
 	Then Observe loading animation shown then hidden
 	And Confirm checkbox added
 
-
 @DynamicControls
-Scenario: Disable and Enable text input control
+Scenario: Enable and Disable text input control
 	Given I visit the Dynamic Controls example page
-	When I click the text input Enable button
+	When I click the "Enable" button
 	Then Observe loading animation shown then hidden
-	And Confirm text input enabled
-	When I click the text input Disable button
+	And Confirm text input "enabled"
+	And I input "random" text
+	When I click the "Disable" button
 	Then Observe loading animation shown then hidden
-	And Confirm text input disabled
+	And Confirm text input "disabled"
+
+
+#Regression Test Cases
+@DynamicControls @Buggy
+Scenario: Bug: lingering checkbox DIV(s) on multiple Remove/add operations
+	Given I visit the Dynamic Controls example page
+	When I click the "Remove" button
+	Then Observe loading animation shown then hidden
+	And Confirm checkbox removal
+	When I click the "Add" button
+	Then Observe loading animation shown then hidden
+	And Confirm checkbox added
+	When I click the "Remove" button
+	Then Confirm checkbox removal
+
+@DynamicControls @Buggy
+Scenario: Bug: loading animations not hidden if interacting with Checkbox Remove/add before Text Input Enable/disable
+	Given I visit the Dynamic Controls example page
+	When I click the "Remove" button
+	Then Observe loading animation shown then hidden
+	When I click the "Add" button
+	Then Observe loading animation shown then hidden
+	When I click the "Enable" button
+	Then Observe loading animation shown then hidden
+	And Confirm text input "enabled"
+	When I click the "Disable" button
+	Then Observe loading animation shown then hidden
+	And Confirm text input "disabled"
