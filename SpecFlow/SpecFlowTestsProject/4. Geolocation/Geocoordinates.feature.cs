@@ -68,14 +68,14 @@ namespace SpecFlowTestsProject._4_Geolocation
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Geolocate explicitly blocked by user", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Geolocate authorized by user", new string[] {
                 "Geolocation",
-                "Blocked"}, SourceLine=6)]
-        public virtual void GeolocateExplicitlyBlockedByUser()
+                "Allowed"}, SourceLine=6)]
+        public virtual void GeolocateAuthorizedByUser()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Geolocate explicitly blocked by user", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Geolocate authorized by user", null, new string[] {
                         "Geolocation",
-                        "Blocked"});
+                        "Allowed"});
 #line 7
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -84,81 +84,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 9
  testRunner.When("I click the Where am I? button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
- testRunner.And("\"Deny\" geolocate request permission dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 11
- testRunner.Then("Geolocate \"is not\" performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 12
- testRunner.When("I click the Where am I? button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 13
- testRunner.Then("Geolocate permission request is not presented", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 14
- testRunner.And("Geolocate \"is not\" performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Geolocate automatically blocked by browser", new string[] {
-                "Geolocation",
-                "Blocked"}, SourceLine=16)]
-        public virtual void GeolocateAutomaticallyBlockedByBrowser()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Geolocate automatically blocked by browser", null, new string[] {
-                        "Geolocation",
-                        "Blocked"});
-#line 17
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 18
- testRunner.Given("I visit the Geolocation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 19
- testRunner.When("I click the Where am I? button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 20
- testRunner.And("\"Close\" geolocate request permission dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 21
- testRunner.Then("Geolocate \"is not\" performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 22
- testRunner.When("I click the Where am I? button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 23
- testRunner.And("\"Close\" geolocate request permission dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 24
- testRunner.Then("Geolocate \"is not\" performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 25
- testRunner.When("I click the Where am I? button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 26
- testRunner.And("\"Close\" geolocate request permission dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 27
- testRunner.Then("Geolocate \"is not\" performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 28
- testRunner.When("I click the Where am I? button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 29
- testRunner.Then("Geolocate permission request is not presented", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Geolocate authorized by user", new string[] {
-                "Geolocation",
-                "Allowed"}, SourceLine=31)]
-        public virtual void GeolocateAuthorizedByUser()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Geolocate authorized by user", null, new string[] {
-                        "Geolocation",
-                        "Allowed"});
-#line 32
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 33
- testRunner.Given("I visit the Geolocation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 34
- testRunner.When("I click the Where am I? button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 35
- testRunner.And("\"Grant\" geolocate request permission dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 36
- testRunner.Then("Geolocate \"is\" performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 37
- testRunner.And("User\'s Lat/Long coordinates are displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 38
- testRunner.And("Google Maps link shows location by returned coordinates", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("User\'s Lat/Long coordinates are displayed and viewable on Google Maps", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

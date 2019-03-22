@@ -4,6 +4,7 @@ using OpenQA.Selenium.Support.UI;
 using TechTalk.SpecFlow;
 using FluentAssertions;
 using System.Globalization;
+using System.Threading;
 
 namespace SpecFlowTestsProject.AUT {
     [Binding]
@@ -57,18 +58,6 @@ namespace SpecFlowTestsProject.AUT {
         [Then(@"the Secure Area page should NOT load")]
         public void ThenTheSecureAreaPageShouldNOTLoad() {
             ConfirmLoggedIn(false);
-        }
-        
-
-        private void ConfirmLoggedIn(bool expectedCondition = true) {
-            IWebElement e = null;
-            if (expectedCondition) {
-                e = FindHeaderWithText("Secure Area");
-                e.Displayed.Should().Be(true);
-            } else {
-                e = FindHeaderWithText("Secure Area");
-                e.Should().BeNull("We should not be able to reach the secure area, yet we have.");
-            }
         }
         #endregion LoginSteps
 
@@ -214,29 +203,52 @@ namespace SpecFlowTestsProject.AUT {
             b.Click();
         }
 
-        [When(@"""(.*)"" geolocate request permission dialog")]
-        public void WhenGeolocateRequestPermissionDialog(string geolocatePermissionAction) {
-            ScenarioContext.Current.Pending();
-        }
-        [Then(@"Geolocate permission request is not presented")]
-        public void ThenGeolocatePermissionRequestIsNotPresented() {
-            WhenGeolocateRequestPermissionDialog("Missing");
-        }
-
-        [Then(@"Geolocate ""(.*)"" performed")]
-        public void ThenGeolocatePerformed(string isOrIsNot) {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Then(@"User's Lat/Long coordinates are displayed")]
+        [Then(@"User's Lat/Long coordinates are displayed and viewable on Google Maps")]
         public void ThenUserSLatLongCoordinatesAreDisplayed() {
-            ScenarioContext.Current.Pending();
-        }
+            IWebElement latValue = WaitForElementToAppear(By.Id("lat-value"));
+            IWebElement longValue = WaitForElementToAppear(By.Id("long-value"));
 
-        [Then(@"Google Maps link shows location by returned coordinates")]
-        public void ThenGoogleMapsLinkShowsLocationByReturnedCoordinates() {
-            ScenarioContext.Current.Pending();
+            latValue.Should().NotBeNull();
+            longValue.Should().NotBeNull();
+
+            latValue.Displayed.Should().BeTrue();
+            longValue.Displayed.Should().BeTrue();
+
+            IWebElement mapLink = webDriver.FindElement(By.XPath("//a[text()='See it on Google']"));
+
+            const string baseUrl = "http://maps.google.com/?q=";
+            string url = mapLink.GetAttribute("href");
+
+            url.Should().BeEquivalentTo(baseUrl + latValue.Text + "," + longValue.Text);
+
+            mapLink.Click();
         }
         #endregion GeolocationSteps
+
+
+        private void ConfirmLoggedIn(bool expectedCondition = true) {
+            IWebElement e = null;
+            if (expectedCondition) {
+                e = FindHeaderWithText("Secure Area");
+                e.Displayed.Should().Be(true);
+            } else {
+                e = FindHeaderWithText("Secure Area");
+                e.Should().BeNull("We should not be able to reach the secure area, yet we have.");
+            }
+        }
+
+        public IWebElement WaitForElementToAppear(By ByIdentifier, int timeoutInSeconds = 30) {
+            IWebElement e = null;
+            WebDriverWait wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(timeoutInSeconds));
+
+            Func<IWebDriver, bool> waitForElement = new Func<IWebDriver, bool>((IWebDriver wD) => {
+                e = wD.FindElement(ByIdentifier);
+                return e.Displayed;
+            });
+
+            wait.Until(waitForElement);
+
+            return e;
+        }
     }
 }

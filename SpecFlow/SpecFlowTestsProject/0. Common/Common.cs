@@ -25,12 +25,22 @@ namespace SpecFlowTestsProject.AUT {
         public void Initialize() {
             switch (browser) {
                 case browsers.Chrome:
-                    ChromeOptions options = new ChromeOptions();
-                    options.AddArgument("start-maximized");
-                    webDriver = new ChromeDriver(options);
+                    ChromeOptions chromeOptions = new ChromeOptions();
+                    chromeOptions.AddArgument("start-maximized");
+
+                    //chromeOptions.AddUserProfilePreference("geolocation.default_content_setting", 1);
+                    //chromeOptions.AddUserProfilePreference("profile.default_content_setting_values.geolocation", 1);
+                    //chromeOptions.AddUserProfilePreference("profile.default_content_settings.geolocation", 1);
+                    
+                    webDriver = new ChromeDriver(chromeOptions);
                     break;
                 case browsers.Firefox:
-                    webDriver = new FirefoxDriver();
+                    FirefoxOptions firefoxOptions = new FirefoxOptions();
+                    firefoxOptions.SetPreference("geo.enabled", true);
+                    firefoxOptions.SetPreference("geo.provider.use_corelocation", true);
+                    firefoxOptions.SetPreference("geo.prompt.testing", false);
+                    firefoxOptions.SetPreference("geo.prompt.testing.allow", true);
+                    webDriver = new FirefoxDriver(firefoxOptions);
                     break;
                 case browsers.Edge:
                     webDriver = new EdgeDriver();
