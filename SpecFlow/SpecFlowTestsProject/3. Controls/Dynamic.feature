@@ -26,8 +26,10 @@ Scenario: Enable and Disable text input control
 	And Confirm text input "disabled"
 
 
-#Regression Test Cases
-@DynamicControls @Buggy
+#Tests for observed Bugs in UAT
+
+@Ignore
+@DynamicControls @Bug
 Scenario: Bug: lingering checkbox DIV(s) on multiple Remove/add operations
 	Given I visit the Dynamic Controls example page
 	When I click the "Remove" button
@@ -39,7 +41,8 @@ Scenario: Bug: lingering checkbox DIV(s) on multiple Remove/add operations
 	When I click the "Remove" button
 	Then Confirm checkbox removal
 
-@DynamicControls @Buggy
+@Ignore
+@DynamicControls @Bug
 Scenario: Bug: loading animations not hidden if interacting with Checkbox Remove/add before Text Input Enable/disable
 	Given I visit the Dynamic Controls example page
 	When I click the "Remove" button

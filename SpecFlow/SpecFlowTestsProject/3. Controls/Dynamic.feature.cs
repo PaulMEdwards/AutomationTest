@@ -128,32 +128,34 @@ this.ScenarioInitialize(scenarioInfo);
         
         [TechTalk.SpecRun.ScenarioAttribute("Bug: lingering checkbox DIV(s) on multiple Remove/add operations", new string[] {
                 "DynamicControls",
-                "Buggy"}, SourceLine=30)]
+                "Bug"}, SourceLine=32)]
+        [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void BugLingeringCheckboxDIVSOnMultipleRemoveAddOperations()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Bug: lingering checkbox DIV(s) on multiple Remove/add operations", null, new string[] {
+                        "Ignore",
                         "DynamicControls",
-                        "Buggy"});
-#line 31
+                        "Bug"});
+#line 33
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 32
- testRunner.Given("I visit the Dynamic Controls example page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 33
- testRunner.When("I click the \"Remove\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 34
- testRunner.Then("Observe loading animation shown then hidden", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given("I visit the Dynamic Controls example page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 35
- testRunner.And("Confirm checkbox removal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 36
- testRunner.When("I click the \"Add\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 37
- testRunner.Then("Observe loading animation shown then hidden", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 38
- testRunner.And("Confirm checkbox added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 39
  testRunner.When("I click the \"Remove\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 36
+ testRunner.Then("Observe loading animation shown then hidden", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 37
+ testRunner.And("Confirm checkbox removal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 38
+ testRunner.When("I click the \"Add\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 39
+ testRunner.Then("Observe loading animation shown then hidden", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 40
+ testRunner.And("Confirm checkbox added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 41
+ testRunner.When("I click the \"Remove\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 42
  testRunner.Then("Confirm checkbox removal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -162,37 +164,39 @@ this.ScenarioInitialize(scenarioInfo);
         [TechTalk.SpecRun.ScenarioAttribute("Bug: loading animations not hidden if interacting with Checkbox Remove/add before" +
             " Text Input Enable/disable", new string[] {
                 "DynamicControls",
-                "Buggy"}, SourceLine=42)]
+                "Bug"}, SourceLine=45)]
+        [TechTalk.SpecRun.IgnoreAttribute()]
         public virtual void BugLoadingAnimationsNotHiddenIfInteractingWithCheckboxRemoveAddBeforeTextInputEnableDisable()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Bug: loading animations not hidden if interacting with Checkbox Remove/add before" +
                     " Text Input Enable/disable", null, new string[] {
+                        "Ignore",
                         "DynamicControls",
-                        "Buggy"});
-#line 43
+                        "Bug"});
+#line 46
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 44
- testRunner.Given("I visit the Dynamic Controls example page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 45
- testRunner.When("I click the \"Remove\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 46
- testRunner.Then("Observe loading animation shown then hidden", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 47
- testRunner.When("I click the \"Add\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I visit the Dynamic Controls example page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 48
- testRunner.Then("Observe loading animation shown then hidden", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I click the \"Remove\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 49
- testRunner.When("I click the \"Enable\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 50
  testRunner.Then("Observe loading animation shown then hidden", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 50
+ testRunner.When("I click the \"Add\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 51
- testRunner.And("Confirm text input \"enabled\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("Observe loading animation shown then hidden", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 52
- testRunner.When("I click the \"Disable\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I click the \"Enable\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 53
  testRunner.Then("Observe loading animation shown then hidden", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 54
+ testRunner.And("Confirm text input \"enabled\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 55
+ testRunner.When("I click the \"Disable\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 56
+ testRunner.Then("Observe loading animation shown then hidden", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 57
  testRunner.And("Confirm text input \"disabled\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
